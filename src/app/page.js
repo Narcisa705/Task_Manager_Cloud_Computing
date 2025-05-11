@@ -153,8 +153,8 @@ export default function Home() {
       <div className="filter-container">
         <select className="filter" onChange={(e) => setFilter(e.target.value)} value={filter}>
           <option value="all">Toate task-urile</option>
-          <option value="completed">Task-uri completate</option>
-          <option value="notCompleted">Task-uri necompletate</option>
+          <option value="completed">Task-uri efectuate</option>
+          <option value="notCompleted">Task-uri neefectuate</option>
         </select>
       </div>
 
