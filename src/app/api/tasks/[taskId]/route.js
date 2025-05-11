@@ -3,10 +3,12 @@ import Task from "@/models/Task";
 
 //  Actualizare task (PUT)
 export async function PUT(req, { params }) {
-  const { taskId } = params;
+  const { taskId } = await params;
+
   await connectToDatabase();
 
   const body = await req.json();
+ 
   const { completed } = body;
 
   if (typeof completed !== 'boolean') {
