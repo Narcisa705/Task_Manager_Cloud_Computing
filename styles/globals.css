@@ -1,0 +1,217 @@
+/* globals.css */
+
+/* Resetarea stilurilor implicite */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fc;
+  color: #4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Task Manager Container */
+.task-manager {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.task-input {
+  width: 80%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.add-task-btn {
+  padding: 12px 18px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #45a049;
+}
+
+/* Filter select */
+.filter-container {
+  margin-bottom: 25px;
+}
+
+.filter {
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.filter:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;  /* Pentru browserele care suportă (Firefox) */
+  scrollbar-color: #4CAF50 #f4f7fc; /* Culoarea scrollbar-ului și a fundalului */
+}
+
+/* Personalizare pentru scrollbar în Chrome, Edge, Safari */
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #4CAF50;
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background-color: #f4f7fc;
+}
+
+
+.task-item {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.task-title {
+  font-size: 1.2rem;
+  color: #333;
+  flex-grow: 1;
+}
+
+.completed-tag {
+  font-size: 1.1rem;
+  color: #4CAF50;
+  margin-left: 10px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.toggle-btn,
+.delete-btn {
+  padding: 8px 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background-color: #1e88e5;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #e53935;
+}
+
+.task-item.completed {
+  background-color: #e8f5e9;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task-manager {
+    padding: 20px;
+  }
+
+  .task-input, .add-task-btn, .filter {
+    width: 100%;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.task-deadline {
+  font-size: 0.95rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+
+
+.task-item.urgent {
+  background-color: #ffe5e5;
+  border-left: 4px solid #ff4d4d;
+}
